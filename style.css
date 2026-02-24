@@ -9,28 +9,70 @@
     --texto-drama: #2d1b2e;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* ==========================================================================
+   BACKGROUND E ELEGANTE (ROSA CHÁ / BLUSH + SEDA)
+   ========================================================================== */
 body {
-    background: linear-gradient(45deg, var(--creme-luxo), var(--rosa-real), var(--lilás-wisteria));
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    background-color: #fcf6f5;
+    /* Fundo base creme rosado bem claro */
+
+    background-image:
+        /* 1. Padrão Vitoriano (Damasco) em branco translúcido para textura rica */
+        /* 2. Brilhos radiais difusos simulando o reflexo em seda */
+        radial-gradient(circle at 15% 30%, rgba(255, 240, 245, 0.7) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(255, 228, 225, 0.6) 0%, transparent 60%),
+
+        /* 3. Gradiente principal suave: Creme -> Rosa Blush -> Rosa Envelhecido */
+        linear-gradient(135deg, #fdfbf7 0%, #f5e3e6 30%, #eecbd0 70%, #e6b8c0 100%);
+
+    background-size: auto, 150% 150%, 150% 150%, 300% 300%;
+    animation: silkShine 18s ease-in-out infinite alternate;
+
+    /* Configurações de texto e layout (mantidas) */
     color: var(--texto-drama);
     font-family: 'Playfair Display', serif;
     overflow-x: hidden;
     min-height: 100vh;
 }
 
+/* Animação que movimenta as "luzes de seda" e as cores pelo fundo */
+@keyframes silkShine {
+    0% {
+        background-position: center, 0% 0%, 100% 100%, 0% 50%;
+    }
+
+    100% {
+        background-position: center, 100% 100%, 0% 0%, 100% 50%;
+    }
+}
+
 @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Tela de Introdução Dramática */
 #intro-curtain {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: var(--texto-drama);
     color: var(--ouro-puro);
     display: flex;
@@ -50,14 +92,29 @@ body {
 }
 
 @keyframes pulseText {
-    0%, 100% { text-shadow: 0 0 10px rgba(255,215,0,0.5); transform: scale(1); }
-    50% { text-shadow: 0 0 30px rgba(255,215,0,1); transform: scale(1.05); }
+
+    0%,
+    100% {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        transform: scale(1);
+    }
+
+    50% {
+        text-shadow: 0 0 30px rgba(255, 215, 0, 1);
+        transform: scale(1.05);
+    }
 }
 
 /* Partículas (Pétalas e Ouro) */
 #particles-container {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    pointer-events: none; z-index: 0; overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
 }
 
 .petal {
@@ -76,15 +133,35 @@ body {
 }
 
 @keyframes fall {
-    0% { transform: translate(0, -10vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 1; }
-    100% { transform: translate(20vw, 110vh) rotate(720deg); opacity: 0; }
+    0% {
+        transform: translate(0, -10vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(20vw, 110vh) rotate(720deg);
+        opacity: 0;
+    }
 }
 
 @keyframes floatUp {
-    0% { transform: translateY(110vh) scale(0); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    0% {
+        transform: translateY(110vh) scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+    }
 }
 
 /* Cabeçalho Extravagante */
@@ -102,22 +179,35 @@ header {
     padding: 5rem 4rem;
     border: 12px solid transparent;
     border-image: var(--ouro-gradiente) 1;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.4), inset 0 0 40px rgba(184,134,11,0.15);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), inset 0 0 40px rgba(184, 134, 11, 0.15);
     position: relative;
 }
 
 .flor-decorativa {
     position: absolute;
     font-size: 4rem;
-    filter: drop-shadow(0 8px 8px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.3));
     animation: sway 3s ease-in-out infinite alternate;
 }
-.flor-esq { top: -30px; left: -30px; }
-.flor-dir { bottom: -30px; right: -30px; }
+
+.flor-esq {
+    top: -30px;
+    left: -30px;
+}
+
+.flor-dir {
+    bottom: -30px;
+    right: -30px;
+}
 
 @keyframes sway {
-    0% { transform: rotate(-10deg); }
-    100% { transform: rotate(10deg); }
+    0% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(10deg);
+    }
 }
 
 h1 {
@@ -141,14 +231,20 @@ h2.subtitle {
     padding-bottom: 15px;
 }
 
-p.intro { font-size: 1.4rem; line-height: 2; font-style: italic; color: #3a2b3c; }
+p.intro {
+    font-size: 1.4rem;
+    line-height: 2;
+    font-style: italic;
+    color: #3a2b3c;
+}
 
 /* Galeria com Foco e Privacidade (Layout em Coluna e Alternado) */
 .gallery {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8rem; /* Espaçamento GIGANTE entre as mulheres */
+    gap: 8rem;
+    /* Espaçamento GIGANTE entre as mulheres */
     padding: 4rem 5% 10rem;
     perspective: 1200px;
     z-index: 10;
@@ -160,7 +256,8 @@ p.intro { font-size: 1.4rem; line-height: 2; font-style: italic; color: #3a2b3c;
     transform: translateY(100px);
     transition: all 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
     width: 100%;
-    max-width: 1000px; /* Cartões bem largos */
+    max-width: 1000px;
+    /* Cartões bem largos */
 }
 
 .card-container.visible {
@@ -168,6 +265,7 @@ p.intro { font-size: 1.4rem; line-height: 2; font-style: italic; color: #3a2b3c;
     transform: translateY(0);
 }
 
+/* --- Seu código original do Card (Mantido e reforçado) --- */
 .card {
     background: rgba(255, 251, 240, 0.85);
     backdrop-filter: blur(10px);
@@ -178,21 +276,94 @@ p.intro { font-size: 1.4rem; line-height: 2; font-style: italic; color: #3a2b3c;
     gap: 4rem;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    transition: transform 0.6s ease, box-shadow 0.6s ease, border-color 0.6s ease;
     border: 2px solid rgba(184, 134, 11, 0.5);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    z-index: 1;
 }
 
-/* Alternar a posição da foto (Esquerda/Direita) a cada mulher */
+/* Alternar a posição da foto */
 .card-container:nth-child(even) .card {
     flex-direction: row-reverse;
     text-align: right;
 }
 
+/* --- EFEITO HOVER CRIATIVO: "BRILHO ENCANTADO" --- */
+
 .card:hover {
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: -15px 35px 60px rgba(184, 134, 11, 0.3), 15px 35px 60px rgba(185, 160, 230, 0.3);
-    border-color: var(--ouro-puro);
+    transform: translateY(-10px) scale(1.02);
+    /* Sombra mais suave e colorida (Dourado + Lavanda) */
+    box-shadow: 
+        0 20px 50px rgba(184, 134, 11, 0.2), 
+        0 0 0 4px rgba(255, 255, 255, 0.4), /* Um aro branco sutil */
+        0 10px 30px rgba(185, 160, 230, 0.4);
+    border-color: #b8860b;
+}
+
+/* Criação das Estrelas/Brilhos usando CSS puro (sem imagens) */
+.card::before,
+.card::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    /* Gradiente para dar volume ao brilho */
+    background: radial-gradient(circle, #fff 10%, #b8860b 90%);
+    
+    /* Corta o quadrado no formato de estrela de 4 pontas (brilho) */
+    clip-path: polygon(50% 0%, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%, 0% 50%, 35% 35%);
+    
+    opacity: 0; /* Invisível inicialmente */
+    z-index: 2; /* Fica acima da borda para brilhar */
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Configuração Individual: Brilho Dourado (Superior Direito) */
+.card::before {
+    top: -25px;
+    right: -25px;
+    filter: drop-shadow(0 0 10px rgba(184, 134, 11, 0.8));
+}
+
+/* Configuração Individual: Brilho Lilás (Inferior Esquerdo) */
+.card::after {
+    bottom: -25px;
+    left: -25px;
+    background: radial-gradient(circle, #fff 10%, #b9a0e6 90%); /* Cor Lilás */
+    filter: drop-shadow(0 0 10px rgba(185, 160, 230, 0.8));
+    animation-delay: 0.2s; /* Pequeno atraso para não serem sincronizados */
+}
+
+/* Ação ao passar o mouse */
+.card:hover::before,
+.card:hover::after {
+    opacity: 1;
+    /* Animação contínua de giro e pulso */
+    animation: sparkleSpin 4s linear infinite; 
+}
+
+/* Animação Keyframes: Gira suavemente e pulsa */
+@keyframes sparkleSpin {
+    0% {
+        transform: rotate(0deg) scale(0.8);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1); /* Aumenta um pouco */
+    }
+    100% {
+        transform: rotate(360deg) scale(0.8);
+    }
+}
+
+/* Ajuste para os cards invertidos (pares) para manter o equilíbrio visual */
+.card-container:nth-child(even) .card::before {
+    left: -25px;
+    right: auto;
+}
+.card-container:nth-child(even) .card::after {
+    right: -25px;
+    left: auto;
 }
 
 /* Seção da imagem */
@@ -202,7 +373,8 @@ p.intro { font-size: 1.4rem; line-height: 2; font-style: italic; color: #3a2b3c;
 }
 
 .moldura-magica {
-    width: 300px; /* Fotos bem maiores */
+    width: 300px;
+    /* Fotos bem maiores */
     height: 300px;
     position: relative;
     border-radius: 50%;
@@ -212,7 +384,10 @@ p.intro { font-size: 1.4rem; line-height: 2; font-style: italic; color: #3a2b3c;
 .moldura-magica::before {
     content: '';
     position: absolute;
-    top: -20px; left: -20px; right: -20px; bottom: -20px;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
     border: 4px dashed var(--ouro-escuro);
     border-radius: 50%;
     animation: spinRigth 20s linear infinite;
@@ -221,18 +396,31 @@ p.intro { font-size: 1.4rem; line-height: 2; font-style: italic; color: #3a2b3c;
 .moldura-magica::after {
     content: '';
     position: absolute;
-    top: -8px; left: -8px; right: -8px; bottom: -8px;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
     border: 8px solid var(--ouro-puro);
     border-radius: 50%;
     box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
     animation: spinLeft 25s linear infinite;
 }
 
-@keyframes spinRigth { 100% { transform: rotate(360deg); } }
-@keyframes spinLeft { 100% { transform: rotate(-360deg); } }
+@keyframes spinRigth {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinLeft {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
 
 .moldura-magica img {
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 50%;
     position: relative;
@@ -241,7 +429,9 @@ p.intro { font-size: 1.4rem; line-height: 2; font-style: italic; color: #3a2b3c;
     border: 6px solid var(--creme-luxo);
 }
 
-.card:hover .moldura-magica img { transform: scale(1.08); }
+.card:hover .moldura-magica img {
+    transform: scale(1.08);
+}
 
 .coroa {
     font-size: 4rem;
@@ -249,14 +439,19 @@ p.intro { font-size: 1.4rem; line-height: 2; font-style: italic; color: #3a2b3c;
     top: -45px;
     left: 50%;
     transform: translateX(-50%);
-    filter: drop-shadow(0 8px 8px rgba(255,215,0,0.6));
+    filter: drop-shadow(0 8px 8px rgba(255, 215, 0, 0.6));
     animation: floatCrown 3s ease-in-out infinite alternate;
     z-index: 10;
 }
 
 @keyframes floatCrown {
-    0% { transform: translateX(-50%) translateY(0); }
-    100% { transform: translateX(-50%) translateY(-15px); }
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-15px);
+    }
 }
 
 /* Seção de Texto da Homenageada */
@@ -269,13 +464,13 @@ p.intro { font-size: 1.4rem; line-height: 2; font-style: italic; color: #3a2b3c;
     font-size: 3rem;
     color: var(--ouro-escuro);
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card p { 
-    font-size: 1.3rem; 
-    line-height: 1.8; 
-    color: #444; 
+.card p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #444;
     font-style: italic;
 }
 
@@ -287,30 +482,60 @@ p.intro { font-size: 1.4rem; line-height: 2; font-style: italic; color: #3a2b3c;
     margin-top: 5rem;
     letter-spacing: 15px;
     opacity: 0.8;
-    text-shadow: 0 0 10px rgba(255,215,0,0.5);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 /* Rodapé */
 footer {
-    text-align: center; padding: 5rem 2rem;
-    background: var(--texto-drama); color: var(--creme-luxo);
-    font-family: 'Cinzel', serif; font-size: 1.5rem;
-    position: relative; z-index: 10;
+    text-align: center;
+    padding: 5rem 2rem;
+    background: var(--texto-drama);
+    color: var(--creme-luxo);
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 10;
     border-top: 5px solid var(--ouro-escuro);
 }
-footer span { font-family: 'Great Vibes', cursive; font-size: 4rem; color: var(--ouro-puro); display: block; margin-top: 15px; }
+
+footer span {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    color: var(--ouro-puro);
+    display: block;
+    margin-top: 15px;
+}
 
 /* Responsividade para telas menores */
 @media (max-width: 900px) {
-    .card, .card-container:nth-child(even) .card {
+
+    .card,
+    .card-container:nth-child(even) .card {
         flex-direction: column;
         text-align: center;
         padding: 3rem 2rem;
         gap: 2rem;
     }
-    .moldura-magica { width: 220px; height: 220px; }
-    h1 { font-size: 4.5rem; }
-    .carta-real { padding: 3rem 1.5rem; }
-    #intro-curtain h2 { font-size: 3rem; }
-    .gallery { gap: 5rem; padding: 2rem 5% 5rem; }
+
+    .moldura-magica {
+        width: 220px;
+        height: 220px;
+    }
+
+    h1 {
+        font-size: 4.5rem;
+    }
+
+    .carta-real {
+        padding: 3rem 1.5rem;
+    }
+
+    #intro-curtain h2 {
+        font-size: 3rem;
+    }
+
+    .gallery {
+        gap: 5rem;
+        padding: 2rem 5% 5rem;
+    }
 }

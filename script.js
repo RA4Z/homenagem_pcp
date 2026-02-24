@@ -73,11 +73,6 @@ const mulheresHomenageadas = [
         descricao: "Chegou recentemente à seção para enfrentar novos desafios. E já demonstra que sua história aqui será digna de memoráveis crônicas."
     },
     {
-        nome: "Lady Hellen, A Força Silenciosa",
-        foto: "images/Hellen.png",
-        descricao: "Quietinha, observadora e constante. Porque as maiores fortalezas nem sempre fazem alarde."
-    },
-    {
         nome: "Lady Valeria, Amor e Inspiração",
         foto: "images/Valeria.png",
         descricao: "Cria seus dois filhos com amor e determinação, enquanto supera desafios diários. Sua força e dedicação são inspiração para todos que a conhecem — uma verdadeira heroína do cotidiano."

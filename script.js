@@ -3,25 +3,110 @@
     ========================================================================= */
 const mulheresHomenageadas = [
     {
-        nome: "Sra. NomeDaPessoa",
-        foto: "images/image.png",
-        descricao: "Detentora de uma sabedoria que rivaliza com os eruditos reais. Sua capacidade de amar e liderar a transforma na verdadeira rainha de seu lar e profissão."
+        nome: "Lady Raquel, A Aprendiz Exímia",
+        foto: "images/Raquel.jpeg",
+        descricao: "Iniciou sua jornada em nova área e já demonstra que aprender com excelência é sua assinatura. O desconhecido não a intimida — apenas a impulsiona."
     },
     {
-        nome: "Srta. NomeDaPessoa",
-        foto: "images/image1.png",
-        descricao: "Com um sorriso que poderia encerrar guerras, ela possui uma alma de artista. Sua ousadia quebra as regras da sociedade com a mais pura elegância."
+        nome: "Lady Amanda, A Senhora da Liderança",
+        foto: "images/Amanda.png",
+        descricao: "Recém-nomeada gerente, prova diariamente que o poder feminino não pede licença — ele se impõe com competência e segurança."
     },
     {
-        nome: "Lady NomeDaPessoa",
-        foto: "images/image2.png",
-        descricao: "Uma força da natureza. Diante das adversidades, ela não se curva; ela floresce. Um exemplo magnífico de resiliência e poder feminino."
+        nome: "Lady Fernanda, A Gentileza Personificada",
+        foto: "images/Fernanda.png",
+        descricao: "Sempre cordial, sempre acolhedora. Há quem diga que sua presença suaviza até os dias mais turbulentos."
     },
     {
-        nome: "Duquesa NomeDaPessoa",
-        foto: "images/image3.png",
-        descricao: "A mais gentil das almas, cujo coração de ouro caridoso ilumina a vida de todos que têm o privilégio de sua divina companhia."
-    }
+        nome: "Lady Bruna, A Rainha das Entrelinhas",
+        foto: "images/Bruna.png",
+        descricao: "Piadas afiadas, olhar atento e comentários no momento exato. Nada escapa ao seu radar bem-humorado."
+    },
+    {
+        nome: "Lady Cintia, A Fênix de Brilho Renovado",
+        foto: "images/Cintia.png",
+        descricao: "Mostrou que momentos difíceis são apenas fases — e que seu brilho jamais esteve ausente, apenas aguardava o momento certo para reluzir."
+    },
+    {
+        nome: "Lady Francine, A Incansável",
+        foto: "images/Francine.png",
+        descricao: "Dedicada, focada e constante. Fiel às suas convicções, pode ser exigente, mas ninguém duvida de sua persistência inabalável."
+    },
+    {
+        nome: "Lady Graziele, A Ousada da Mudança",
+        foto: "images/Graziele.png",
+        descricao: "Deixou para trás anos no almoxarifado para abraçar novos desafios no PCP. Coragem não lhe falta — visão também não."
+    },
+    {
+        nome: "Lady Daniele, A Determinação Carismática",
+        foto: "images/Daniele.jpeg",
+        descricao: "Determinada como poucas, não mede esforços para alcançar o que deseja. E seu carisma natural faz com que até as tarefas mais árduas pareçam festas de salão."
+    },
+    {
+        nome: "Lady Isadora, A Verdadeira Lady",
+        foto: "images/Isadora.png",
+        descricao: "Elegância natural, postura impecável e serenidade admirável. Classe não se aprende — carrega-se com cada gesto."
+    },
+    {
+        nome: "Lady Joenice, A Determinada Bem-Humorada",
+        foto: "images/Joenice.png",
+        descricao: "Quando decide algo, realiza. E ainda encontra tempo para espalhar risadas pelo caminho, porque a seriedade só combina com charme."
+    },
+    {
+        nome: "Lady Karoline, A Intensidade Encantadora",
+        foto: "images/Karoline.png",
+        descricao: "Ansiedade e alegria coexistem em sua personalidade vibrante. Vive tudo com emoção genuína — e contagiante."
+    },
+    {
+        nome: "Lady Marineusa, O Exemplo Inspirador",
+        foto: "images/Marineusa.png",
+        descricao: "Batalhadora incansável, conquista o que deseja com graça e firmeza. Sua trajetória fala por si."
+    },
+    {
+        nome: "Lady Nathalia, A Persistente Espirituosa",
+        foto: "images/Nathalia.png",
+        descricao: "Determinação e humor caminham juntos em sua jornada. Foco sem perder a leveza — combinação rara e irresistível."
+    },
+    {
+        nome: "Lady Thálita, A Nova Promessa",
+        foto: "images/Thálita.png",
+        descricao: "Chegou recentemente à seção para enfrentar novos desafios. E já demonstra que sua história aqui será digna de memoráveis crônicas."
+    },
+    {
+        nome: "Lady Hellen, A Força Silenciosa",
+        foto: "images/Hellen.png",
+        descricao: "Quietinha, observadora e constante. Porque as maiores fortalezas nem sempre fazem alarde."
+    },
+    {
+        nome: "Lady Valeria, Amor e Inspiração",
+        foto: "images/Valeria.png",
+        descricao: "Cria seus dois filhos com amor e determinação, enquanto supera desafios diários. Sua força e dedicação são inspiração para todos que a conhecem — uma verdadeira heroína do cotidiano."
+    },
+    {
+        nome: "Lady Eliana, A Resiliência Estratégica",
+        foto: "images/Eliana.png",
+        descricao: "Transforma cada obstáculo em oportunidade e garante que nada fique incompleto. Perseverança e elegância combinam perfeitamente em seu modo de conduzir desafios."
+    },
+    {
+        nome: "Lady Dandara, A Nova Força da Temporada",
+        foto: "images/Dandara.png",
+        descricao: "Chegou recentemente, trazendo disposição, energia e vontade de crescer. Se o início já demonstra seu brilho, esta temporada promete ser apenas o primeiro capítulo de uma trajetória marcante."
+    },
+    {
+        nome: "Lady Samara, A Bem-Humorada Determinada",
+        foto: "images/Samara.png",
+        descricao: "Responsável, determinada e com um senso de humor que ilumina o ambiente, Lady Samara enfrenta desafios com leveza e eficiência, provando que foco e diversão podem caminhar lado a lado."
+    },
+    {
+        nome: "Lady Solange, A Confidente Diligente",
+        foto: "images/Solange.png",
+        descricao: "Comunicativa e dedicada, assume responsabilidades com naturalidade. Sua empatia não é detalhe — é marca registrada."
+    },
+    {
+        nome: "Lady Thaiane, A Determinada Autêntica",
+        foto: "images/Thaiane.png",
+        descricao: "Confiante e organizada, traça metas com precisão. Não segue padrões — estabelece os seus."
+    },
 ];
 
 /* =========================================================================

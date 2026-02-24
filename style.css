@@ -1,0 +1,316 @@
+/* Paleta Extravagante Bridgerton */
+:root {
+    --ouro-puro: #ffd700;
+    --ouro-escuro: #b8860b;
+    --ouro-gradiente: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    --lilás-wisteria: #b9a0e6;
+    --rosa-real: #ffb6c1;
+    --creme-luxo: #fffbf0;
+    --texto-drama: #2d1b2e;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: linear-gradient(45deg, var(--creme-luxo), var(--rosa-real), var(--lilás-wisteria));
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: var(--texto-drama);
+    font-family: 'Playfair Display', serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Tela de Introdução Dramática */
+#intro-curtain {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--texto-drama);
+    color: var(--ouro-puro);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1.5s ease-in-out, visibility 1.5s;
+}
+
+#intro-curtain h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    animation: pulseText 2s infinite;
+    text-align: center;
+    padding: 0 20px;
+}
+
+@keyframes pulseText {
+    0%, 100% { text-shadow: 0 0 10px rgba(255,215,0,0.5); transform: scale(1); }
+    50% { text-shadow: 0 0 30px rgba(255,215,0,1); transform: scale(1.05); }
+}
+
+/* Partículas (Pétalas e Ouro) */
+#particles-container {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0; overflow: hidden;
+}
+
+.petal {
+    position: absolute;
+    background: rgba(255, 105, 180, 0.6);
+    border-radius: 15px 0;
+    animation: fall linear infinite;
+}
+
+.sparkle {
+    position: absolute;
+    background: var(--ouro-puro);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--ouro-puro), 0 0 20px var(--creme-luxo);
+    animation: floatUp linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translate(0, -10vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translate(20vw, 110vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(110vh) scale(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+}
+
+/* Cabeçalho Extravagante */
+header {
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+    z-index: 10;
+}
+
+.carta-real {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 251, 240, 0.95);
+    padding: 5rem 4rem;
+    border: 12px solid transparent;
+    border-image: var(--ouro-gradiente) 1;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4), inset 0 0 40px rgba(184,134,11,0.15);
+    position: relative;
+}
+
+.flor-decorativa {
+    position: absolute;
+    font-size: 4rem;
+    filter: drop-shadow(0 8px 8px rgba(0,0,0,0.3));
+    animation: sway 3s ease-in-out infinite alternate;
+}
+.flor-esq { top: -30px; left: -30px; }
+.flor-dir { bottom: -30px; right: -30px; }
+
+@keyframes sway {
+    0% { transform: rotate(-10deg); }
+    100% { transform: rotate(10deg); }
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 7rem;
+    background: var(--ouro-gradiente);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+h2.subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    color: var(--ouro-escuro);
+    margin-bottom: 3rem;
+    border-bottom: 2px solid var(--ouro-escuro);
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+p.intro { font-size: 1.4rem; line-height: 2; font-style: italic; color: #3a2b3c; }
+
+/* Galeria com Foco e Privacidade (Layout em Coluna e Alternado) */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8rem; /* Espaçamento GIGANTE entre as mulheres */
+    padding: 4rem 5% 10rem;
+    perspective: 1200px;
+    z-index: 10;
+    position: relative;
+}
+
+.card-container {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    width: 100%;
+    max-width: 1000px; /* Cartões bem largos */
+}
+
+.card-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card {
+    background: rgba(255, 251, 240, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    border: 2px solid rgba(184, 134, 11, 0.5);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Alternar a posição da foto (Esquerda/Direita) a cada mulher */
+.card-container:nth-child(even) .card {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: -15px 35px 60px rgba(184, 134, 11, 0.3), 15px 35px 60px rgba(185, 160, 230, 0.3);
+    border-color: var(--ouro-puro);
+}
+
+/* Seção da imagem */
+.imagem-destaque {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.moldura-magica {
+    width: 300px; /* Fotos bem maiores */
+    height: 300px;
+    position: relative;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.moldura-magica::before {
+    content: '';
+    position: absolute;
+    top: -20px; left: -20px; right: -20px; bottom: -20px;
+    border: 4px dashed var(--ouro-escuro);
+    border-radius: 50%;
+    animation: spinRigth 20s linear infinite;
+}
+
+.moldura-magica::after {
+    content: '';
+    position: absolute;
+    top: -8px; left: -8px; right: -8px; bottom: -8px;
+    border: 8px solid var(--ouro-puro);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+    animation: spinLeft 25s linear infinite;
+}
+
+@keyframes spinRigth { 100% { transform: rotate(360deg); } }
+@keyframes spinLeft { 100% { transform: rotate(-360deg); } }
+
+.moldura-magica img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 5;
+    transition: transform 0.6s ease;
+    border: 6px solid var(--creme-luxo);
+}
+
+.card:hover .moldura-magica img { transform: scale(1.08); }
+
+.coroa {
+    font-size: 4rem;
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 8px 8px rgba(255,215,0,0.6));
+    animation: floatCrown 3s ease-in-out infinite alternate;
+    z-index: 10;
+}
+
+@keyframes floatCrown {
+    0% { transform: translateX(-50%) translateY(0); }
+    100% { transform: translateX(-50%) translateY(-15px); }
+}
+
+/* Seção de Texto da Homenageada */
+.texto-homenagem {
+    flex-grow: 1;
+}
+
+.card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: var(--ouro-escuro);
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.card p { 
+    font-size: 1.3rem; 
+    line-height: 1.8; 
+    color: #444; 
+    font-style: italic;
+}
+
+/* Divisória Real entre os cards */
+.royal-divider {
+    font-size: 2.5rem;
+    color: var(--ouro-escuro);
+    text-align: center;
+    margin-top: 5rem;
+    letter-spacing: 15px;
+    opacity: 0.8;
+    text-shadow: 0 0 10px rgba(255,215,0,0.5);
+}
+
+/* Rodapé */
+footer {
+    text-align: center; padding: 5rem 2rem;
+    background: var(--texto-drama); color: var(--creme-luxo);
+    font-family: 'Cinzel', serif; font-size: 1.5rem;
+    position: relative; z-index: 10;
+    border-top: 5px solid var(--ouro-escuro);
+}
+footer span { font-family: 'Great Vibes', cursive; font-size: 4rem; color: var(--ouro-puro); display: block; margin-top: 15px; }
+
+/* Responsividade para telas menores */
+@media (max-width: 900px) {
+    .card, .card-container:nth-child(even) .card {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 2rem;
+        gap: 2rem;
+    }
+    .moldura-magica { width: 220px; height: 220px; }
+    h1 { font-size: 4.5rem; }
+    .carta-real { padding: 3rem 1.5rem; }
+    #intro-curtain h2 { font-size: 3rem; }
+    .gallery { gap: 5rem; padding: 2rem 5% 5rem; }
+}

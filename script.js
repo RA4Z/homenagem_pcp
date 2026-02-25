@@ -94,7 +94,7 @@ const mulheresHomenageadas = [
     },
     {
         nome: "Lady Solange, A Confidente Diligente",
-        foto: "images/Solange.png",
+        foto: "images/Solange.jpeg",
         descricao: "Comunicativa e dedicada, assume responsabilidades com naturalidade. Sua empatia não é detalhe — é marca registrada."
     },
     {
